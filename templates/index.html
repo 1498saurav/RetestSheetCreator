@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JMA | Retest</title>
+</head>
+<body>
+	<form action = "/retestCompute" method = "POST" enctype = "multipart/form-data">
+		<h3>Enter csv file!</h3>
+		<input type = "file" name = "file" />
+		<br><br>
+		<h3>Check absent members!</h3>
+		{% for i in members %}
+    	<input type="checkbox" id="{{i}}" name="members" value="{{i}}">
+    	<label for="{{i}}">{{i}}</label>
+		{% endfor %}
+		<br><br>
+		<h3>Is it a emergency build?</h3>
+		<input type="radio" name="emergency" id="yes" value="yes">
+		<label for="yes">Yes</label>
+		<input type="radio" name="emergency" id="no" value="no" checked>
+		<label for="no">No</label>
+		<br><br>
+    <input type = "submit"/>
+  </form>
+</body>
+</html>
